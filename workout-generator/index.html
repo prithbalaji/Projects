@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FORM — Workout Generator</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <main class="app">
+    <header>
+      <button class="brand" aria-label="Reset generator"><span class="brand-mark">F</span><span>FORM</span></button>
+      <button class="theme-button" id="themeButton" aria-label="Toggle theme">◐</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">BUILD YOUR SESSION</p>
+      <h1>Train for <span id="goalHeading">strength.</span></h1>
+    </section>
+
+    <section class="generator">
+      <aside class="controls">
+        <div class="control-group">
+          <label>Training function</label>
+          <div class="goal-grid" id="goalGrid">
+            <button class="goal active" data-goal="strength"><b>Strength</b><small>Heavy & controlled</small></button>
+            <button class="goal" data-goal="speed"><b>Speed</b><small>Fast & explosive</small></button>
+            <button class="goal" data-goal="power"><b>Power</b><small>Maximum force</small></button>
+            <button class="goal" data-goal="isometric"><b>Isometric</b><small>Holds & tension</small></button>
+            <button class="goal" data-goal="endurance"><b>Endurance</b><small>High volume</small></button>
+            <button class="goal" data-goal="mobility"><b>Mobility</b><small>Control & range</small></button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Body area</label>
+          <div class="segment" id="areaGrid">
+            <button class="area active" data-area="full">Full body</button>
+            <button class="area" data-area="upper">Upper</button>
+            <button class="area" data-area="lower">Lower</button>
+            <button class="area" data-area="core">Core</button>
+          </div>
+        </div>
+
+        <div class="control-grid">
+          <div class="control-group"><label for="level">Level</label><select id="level"><option>Beginner</option><option selected>Intermediate</option><option>Advanced</option></select></div>
+          <div class="control-group"><label for="equipment">Equipment</label><select id="equipment"><option>Full gym</option><option>Home & dumbbells</option><option selected>No equipment</option></select></div>
+        </div>
+
+        <div class="control-group"><label for="duration">Duration: <strong id="durationLabel">30 min</strong></label><input id="duration" type="range" min="15" max="75" step="15" value="30"></div>
+
+        <button class="generate-button" id="generateButton">Generate workout <span>→</span></button>
+      </aside>
+
+      <section class="workout-panel">
+        <div class="workout-heading">
+          <div><p class="eyebrow">TODAY'S SESSION</p><h2 id="workoutTitle">Full-body strength</h2></div>
+          <div class="duration-badge"><span id="workoutDuration">30</span><small>MIN</small></div>
+        </div>
+
+        <div class="metrics"><div><span>Exercises</span><strong id="exerciseCount">6</strong></div><div><span>Intensity</span><strong id="intensity">Moderate</strong></div><div><span>Rest</span><strong id="restTime">60 sec</strong></div></div>
+        <div class="exercise-list" id="exerciseList"></div>
+        <button class="start-button" id="startButton">Start workout</button>
+      </section>
+    </section>
+  </main>
+
+  <div class="timer-overlay" id="timerOverlay">
+    <button class="timer-close" id="timerClose">×</button>
+    <p id="timerExercise">Exercise</p>
+    <strong id="timerValue">00:00</strong>
+    <button id="timerToggle">Pause</button>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
