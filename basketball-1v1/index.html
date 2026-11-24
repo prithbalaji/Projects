@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>COURT // 1V1</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand"><span class="brand-ball"></span><b>COURT</b><i>//</i><span>1V1</span></div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound">VOL <b>ON</b></button>
+    </header>
+
+    <section class="scorebar">
+      <div class="player player-left"><span>PLAYER 1</span><strong id="score1">0</strong></div>
+      <div class="clock"><small id="roundLabel">ROUND 1</small><strong id="clock">01:00</strong></div>
+      <div class="player player-right"><strong id="score2">0</strong><span>CPU</span></div>
+    </section>
+
+    <section class="court-wrap">
+      <canvas id="game" width="1100" height="620" aria-label="Basketball 1v1 game"></canvas>
+      <div class="power-panel"><div><span id="powerLabel">SHOT POWER</span><b id="powerValue">0%</b></div><div class="power-track"><i id="powerBar"></i></div></div>
+      <div class="status" id="status">PRESS SPACE TO START</div>
+    </section>
+
+    <footer>
+      <div><kbd>A</kbd><kbd>D</kbd><span>MOVE</span></div>
+      <div><kbd>W</kbd><span>JUMP / BLOCK</span></div>
+      <div><kbd>S</kbd><span>SHOOT</span></div>
+      <button id="restartButton">RESTART</button>
+    </footer>
+  </main>
+  <div class="start-overlay" id="startOverlay">
+    <div class="overlay-card"><p>BLACKTOP BASKETBALL</p><h1>FIRST TO 11</h1><button id="startButton">START GAME <span>→</span></button></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
