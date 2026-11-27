@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18)
+project(nccl_allreduce LANGUAGES CXX)
+find_package(CUDAToolkit REQUIRED)
+find_package(MPI REQUIRED)
+add_executable(nccl_allreduce nccl_allreduce.cpp)
+target_link_libraries(nccl_allreduce PRIVATE CUDA::cudart CUDA::nccl MPI::MPI_CXX)
+enable_language(CUDA)

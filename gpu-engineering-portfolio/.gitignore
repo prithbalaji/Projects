@@ -1,0 +1,10 @@
+build/
+.venv/
+__pycache__/
+*.pyc
+*.onnx
+*.engine
+*.plan
+*.nsys-rep
+*.ncu-rep
+*.nvprof
