@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Snake</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header>
+      <h1>Snake</h1>
+      <div class="stats"><span>Score <strong id="score">0</strong></span><span>Best <strong id="best">0</strong></span></div>
+    </header>
+    <canvas id="game" width="600" height="600" aria-label="Snake game"></canvas>
+    <p id="message">Use the arrow keys or WASD</p>
+    <button id="restart" type="button">Play Again</button>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

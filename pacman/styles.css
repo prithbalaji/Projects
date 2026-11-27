@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #09091c; color: white; font-family: Arial, sans-serif; }
+.game-shell { display: grid; justify-items: center; gap: 10px; padding: 16px; }
+header { width: 560px; max-width: 92vw; display: flex; align-items: center; justify-content: space-between; }
+h1 { margin: 0; color: #ffe600; text-shadow: 0 0 12px #ff0; font-size: 34px; }
+.stats { display: flex; gap: 14px; }
+canvas { width: min(560px, 92vw); height: auto; max-height: 72vh; border: 3px solid #2121ff; border-radius: 8px; background: #05050a; box-shadow: 0 0 24px rgba(33,33,255,.35); }
+#message { min-height: 20px; margin: 0; color: #ddd; }
+button { border: 0; border-radius: 8px; padding: 10px 18px; background: #ffe600; color: #111; font-weight: bold; cursor: pointer; }
