@@ -1,0 +1,10 @@
+# Local environment and generated artifacts
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+*.ppm
