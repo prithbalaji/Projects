@@ -1,20 +1,50 @@
-# NVIDIA + CUDA projects
+# Prithvi's Projects
 
-Five progressively advanced projects for learning NVIDIA NIM, CUDA C++, and PyTorch CUDA extensions. The Python/NIM project runs from a regular CPU machine; CUDA projects require an NVIDIA GPU and CUDA Toolkit. A 2014 MacBook Pro's GT 750M is not a supported target for current CUDA releases—use a compatible cloud GPU for the CUDA projects.
+A collection of browser games, utility apps, experiments, and GPU-computing projects. Each project lives in its own folder and may have its own setup instructions.
 
-## Projects
+## Featured: GPU Engineering Portfolio
 
-1. [NIM document Q&A (RAG)](./nvidia-nim-rag/) — Ask questions over local PDF, Markdown, and text files with local embeddings and NVIDIA NIM chat inference.
-2. [CUDA image filters](./cuda-image-filters/) — Apply grayscale, Sobel, and box blur kernels to PPM images and compare against CPU implementations.
-3. [Tiled matrix multiplication](./cuda-matmul/) — Compare naive and shared-memory tiled CUDA GEMM, including correctness checks and timings.
-4. [CUDA ray tracer](./cuda-raytracer/) — Render a small procedural scene in parallel and write a PPM image.
-5. [PyTorch CUDA SiLU extension](./pytorch-silu-extension/) — Build a custom CUDA operator and call it from PyTorch.
+Hands-on prototypes for CUDA development, NVIDIA inference, profiling, serving, and multi-GPU communication.
+
+| Project | What it explores |
+|---|---|
+| [CUDA Kernel Lab](./gpu-engineering-portfolio/cuda-kernel-lab/) | Vector operations, reductions, tiled matrix multiplication, correctness checks, and profiling workflows. |
+| [TensorRT Optimization Lab](./gpu-engineering-portfolio/tensorrt-optimization-lab/) | Model export and GPU inference benchmarking foundations. |
+| [TensorRT-LLM Serving Lab](./gpu-engineering-portfolio/trtllm-serving-lab/) | A serving API prototype and a roadmap for integrating a supported TensorRT-LLM runtime. |
+| [Triton Serving Lab](./gpu-engineering-portfolio/triton-serving-lab/) | Triton-style model serving, batching configuration, and a load-test client. |
+| [NCCL + Nsight Lab](./gpu-engineering-portfolio/nccl-nsight-lab/) | NCCL AllReduce fundamentals and Nsight Systems/Compute profiling exercises. |
+| [Portfolio benchmark template](./gpu-engineering-portfolio/BENCHMARK_TEMPLATE.md) | Capture environment, methodology, performance, accuracy, and limitations consistently. |
+
+These are learning prototypes, not production-optimized implementations. CUDA, TensorRT, TensorRT-LLM, Triton GPU inference, NCCL, and Nsight workflows require compatible NVIDIA hardware and software versions for real GPU measurements. Read each project's README before running it; do not report unmeasured performance as a result.
+
+## NVIDIA + CUDA learning projects
+
+- [NVIDIA NIM document Q&A (RAG)](./nvidia-nim-rag/) — Ask questions over local documents with local embeddings and NVIDIA NIM chat inference. Requires an API key in the `NVIDIA_API_KEY` environment variable.
+- [CUDA image filters](./cuda-image-filters/) — Grayscale, box blur, and Sobel filters with CPU-reference comparison.
+- [CUDA matrix multiplication](./cuda-matmul/) — Compare naive and shared-memory tiled CUDA implementations.
+- [CUDA ray tracer](./cuda-raytracer/) — Render a procedural scene to a PPM image using a CUDA kernel.
+- [PyTorch CUDA SiLU extension](./pytorch-silu-extension/) — Build a custom CUDA operator and call it from PyTorch.
+
+## Apps, games, and experiments
+
+- [Basketball 1v1](./basketball-1v1/) — Browser-based basketball game.
+- [CV receipt scanner](./cv-receipt-scanner/) — Computer-vision receipt-scanning project.
+- [Document expiry tracker](./document-expiry-tracker/) — Track document expiration dates.
+- [Net worth app](./net-worth-app/) — Personal net-worth tracking app.
+- [Predictive expense analysis](./predictive-expense-analysis/) — Expense analysis and forecasting project.
+- [Quote of the day](./quote-of-the-day/) — Daily quote app.
+- [Receipt scanner](./receipt-scanner/) — Receipt-scanning project.
+- [Translator app](./translatorapp/) — Translation app.
+- [Wordle](./wordle/) — Word-guessing game.
+- [Workout generator](./workout-generator/) — Workout planning project.
 
 ## Getting started
 
-- Open this repository in VS Code. Install the Microsoft C/C++, Python, and Remote - SSH extensions as appropriate. NVIDIA's CUDA development extension is optional; the CUDA Toolkit and compiler must be installed on the machine that builds/runs CUDA code.
-- For cloud GPUs, connect to a machine with a supported NVIDIA GPU and CUDA Toolkit using Remote - SSH. Run `nvidia-smi` and `nvcc --version` in the remote terminal to verify the environment. Avoid putting API keys or cloud credentials in source files.
-- For NIM, create an NVIDIA developer API key and export it as `NVIDIA_API_KEY`; see that project's README. Never commit the key.
-- Each project has its own instructions and dependencies. CUDA code cannot be compiled with Apple's stock macOS toolchain or run on a Mac GPU.
+1. Browse to a project folder and read its README for specific requirements and run instructions.
+2. Web projects can often be opened directly in a browser or served locally; Python and CUDA projects may require additional packages or toolchains.
+3. For GPU projects, use a supported NVIDIA GPU environment and verify the driver and toolkit versions. A MacBook GPU is not a substitute for a CUDA-capable NVIDIA GPU.
+4. Keep credentials, API keys, private documents, generated model weights, and build artifacts out of commits. Use environment variables for secrets.
 
-These are educational starter implementations, not production-optimized libraries. Check NVIDIA's current CUDA and NIM documentation for supported hardware, model identifiers, and API availability.
+## Contributing and feedback
+
+These projects are personal learning experiments. Suggestions, bug reports, and improvements are welcome through GitHub issues or pull requests.
